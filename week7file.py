@@ -46,3 +46,10 @@ print(b)
 c= df.loc['AUD/USD']
 print(c)
 
+x=0
+if [False]:
+    x=x+1
+
+print(x)
+
+

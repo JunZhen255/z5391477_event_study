@@ -174,7 +174,7 @@ print(x)
 #type(df.loc['2020-01-03']) # --> <class 'pandas.core.series.Series'> 
 
 # This will raise an exception because the label does not exist
-#df.loc['2020-01-01']
+df.loc['2020-01-01']
 
 # 1.2.2 Dataframe.loc: Selection using sequence of labels
 # Set x so it contains the closing prices for '2020-01-02' and '2020-01-03'
@@ -194,8 +194,8 @@ print(type(x))
 
 
 # This will return an empty DF
-#x = df.loc['2999-01-01':'2999-01-10', :] 
-#print(x) 
+x = df.loc['2999-01-01':'2999-01-10', :]
+print(x)
 
 # Slices can be open ended
 # However, single row labels and open column slices will NOT return a
@@ -499,32 +499,32 @@ sorted_ser  = '?'
 #    dtype: float64
 
 # Get the first element of the series
-x  = '?'
-
+x  = ser.loc('2020-01-02')
+print(x)
 # Get the first and fourth element (series)
 x  = '?'
 
 # NOTE: When using slices, the endpoints are NOT included
 # This will return a series with the first element only
-#x = ser[0:1]   
+x = ser[0:1]
 
 # This will return the first five elements of the series
-#x = ser[:5]  
-#print(x)  
+x = ser[:5]
+print(x)
 
 # This will return every other element, starting at position 0
-#x = ser[::2]  
-#print(x)  
+x = ser[::2]
+print(x)
 
 # This returns the series in reverse order
-#x = ser[::-1]  
-#print(x)  
+x = ser[::-1]
+print(x)
 
 
 new_ser = pd.Series(data=['a','b', 'c'], index=[1, -4, 10])
 # This will produce an empty series (because pandas thinks these are positions, not labels)
 x = new_ser[1:-4] 
-#print(x) 
+print(x)
 
 # 3.2 Dataframe
 # -------------
